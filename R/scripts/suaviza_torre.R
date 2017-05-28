@@ -1,0 +1,16 @@
+# readRDS("~/Dropbox/Dissertacao/")
+torre<- ndvi.fit.SG[30,]
+plot(torre, type = "l")
+dtorre <- c(NA,diff(torre))
+dtorre2 <- c(NA, diff(dtorre))
+par(new=TRUE)
+plot(dtorre2, type = "l", col = 4, axes=FALSE)
+axis(4)
+abline(h=0,col="gray")
+
+matplot(x = 1:ncol(ndvi.fit.SG),y = t(ndvi.fit.SG[in.basin,]), type = "l")
+lines(ndvi.fit.SG[30,], lwd = 3)
+datas <- rep(1:23, 14)
+length(datas)
+matplot(x = datas,y = t(ndvi.fit.SG[in.basin,]), type = "p", pch = 20)
+lines(x = datas,ndvi.fit.SG[30,], lwd = 3)
